@@ -96,8 +96,8 @@ ResultadoTransporte validarTransporte(float pesoKg) {
     float pesoT = pesoKg / 1000.0;
 
     // Capacidades
-    const float capG = 10.0;   // transporte grande
-    const float capP = 2.0;   // transporte pequeño
+    const float capG = 10.0;  
+    const float capP = 2.0;   
 
     const int maxG = 10;
     const int maxP = 2;
@@ -106,7 +106,7 @@ ResultadoTransporte validarTransporte(float pesoKg) {
     float mejorCapacidad = 0;
     int minTransportes = 9999;
 
-    // 1. Encontrar la mejor combinación SIN redondear aún
+    // 1. Encontrar la mejor combinación
     for (int g = 0; g <= maxG; g++) {
         for (int p = 0; p <= maxP; p++) {
 
@@ -126,13 +126,11 @@ ResultadoTransporte validarTransporte(float pesoKg) {
         }
     }
 
-    // Si no hay combinación posible
     if (mejorG == -1) {
         printf("\nNo existe una combinación de transportes que pueda mover este peso.\n");
         return r;
     }
 
-    // 2. Ahora sí aplicar el redondeo DESPUÉS de encontrar la combinación
     float decimal = pesoT - (int)pesoT;
     float pesoFinalT;
 
@@ -152,7 +150,7 @@ ResultadoTransporte validarTransporte(float pesoKg) {
     printf("Capacidad total disponible: %.2f t\n", mejorCapacidad);
     printf("Peso final considerado: %.2f t\n", pesoFinalT);
 
-    // 3. Guardar valores para retornar
+    // 3. Valores para retornar
     r.transportes = minTransportes;
     r.toneladas = mejorCapacidad;
 
