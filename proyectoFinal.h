@@ -1,6 +1,13 @@
 #ifndef PROYECTOFINAL_H
 #define PROYECTOFINAL_H
 
-float calculoPeso();   // Declaración de la función
+float calculoPeso();
+
+typedef struct {
+    int transportes;   
+    float toneladas;   
+} ResultadoTransporte;
+
+ResultadoTransporte validarTransporte(float pesoKg);
 
 #endif
