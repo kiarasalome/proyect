@@ -3,6 +3,10 @@
 #include "proyectoFinal.h"
 
 int main () {
+    typedef struct {
+    int transportes;   
+    float toneladas;   
+    } ResultadoTransporte;
     return 0;
 }
 
