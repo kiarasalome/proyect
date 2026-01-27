@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 float calculoPeso();
-//HOLAaaaaaaaaa
-int main(){
 
+int main(){
     
     printf("%.2f", calculoPeso());
     return 0;
