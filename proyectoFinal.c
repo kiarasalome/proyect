@@ -156,3 +156,44 @@ ResultadoTransporte validarTransporte(float pesoKg) {
 
     return r;
 }
+
+//Funcion 3 (parte mateo).
+float calculoCostoPais(float pesoFinalT){
+    //Distancia(km) desde (un pais seleccionado) a los paises por ruta de comercio y valor porcentaje de impuesto de importancion por cada pais
+        int CHINA = 18749; 
+        int ALEMANIA = 10310; 
+        int ITALIA = 11500; 
+        int MEXICO = 3000;
+        int VIETNAM = 21000; 
+        int pais;
+        float costoTransporte;
+    // Seleccion del pais.
+        printf("Seleccione el pais de destino deseado de comercio(mas populares):\n");
+        printf("1.China\n 2.Almemania\n 3.Italia\n 4.Mexico\n 5.Vietnam\n");
+        scanf("%i", &pais);
+        while(pais < 1 || pais > 5){
+            printf("Seleccione una opcion valida de pais deseado:\n");
+            scanf("%i", &pais);
+        }
+    //Calcula el costo del pais de acuerdo a la distancia del pais seleccionado.
+        switch(pais){
+            case 1:
+            costoTransporte = CHINA * pesoFinalT;
+            break;
+            case 2:
+            costoTransporte = ALEMANIA * pesoFinalT;
+            break;
+            case 3:
+            costoTransporte = ITALIA * pesoFinalT;
+            break;
+            case 4:
+            costoTransporte = MEXICO * pesoFinalT;
+            break;
+            case 5:
+            costoTransporte = VIETNAM * pesoFinalT;
+            break;
+        }
+    //Muesra rsultados
+        printf("\nPeso a transportar: %.2f toneladas\n", pesoFinalT);
+        printf("Costo de transporte: $%.2f\n", costoTransporte);
+    }
