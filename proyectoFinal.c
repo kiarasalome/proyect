@@ -159,7 +159,7 @@ ResultadoTransporte validarTransporte(float pesoKg) {
 
 //Funcion 3 (parte mateo).
 float calculoCostoPais(float pesoFinalT){
-    //Distancia(km) desde (un pais seleccionado) a los paises por ruta de comercio y valor porcentaje de impuesto de importancion por cada pais
+    //Distancia(km) desde Ecuador a los paises por ruta de comercio por cada pais de destino.
         int CHINA = 18749; 
         int ALEMANIA = 10310; 
         int ITALIA = 11500; 
@@ -167,33 +167,31 @@ float calculoCostoPais(float pesoFinalT){
         int VIETNAM = 21000; 
         int pais;
         float costoTransporte;
-    // Seleccion del pais.
-        printf("Seleccione el pais de destino deseado de comercio(mas populares):\n");
-        printf("1.China\n 2.Almemania\n 3.Italia\n 4.Mexico\n 5.Vietnam\n");
+        float valorPagar;
+        valorPagar  = pesoFinalT * 1;
+        printf("Seleccione el pais de destino deseado de comercio, de acuerdo a su distancia desde Ecuador:\n(El costo de llevar 1T por 1Km es 1 dolar)\n");
+        printf(" 1.China(18,749Km)\n 2.Almemania(10,310Km)\n 3.Italia(11,500Km)\n 4.Mexico(3,000Km)\n 5.Vietnam(21,000Km)\n");
         scanf("%i", &pais);
         while(pais < 1 || pais > 5){
             printf("Seleccione una opcion valida de pais deseado:\n");
             scanf("%i", &pais);
         }
-    //Calcula el costo del pais de acuerdo a la distancia del pais seleccionado.
         switch(pais){
             case 1:
-            costoTransporte = CHINA * pesoFinalT;
+            costoTransporte = CHINA * valorPagar;
             break;
             case 2:
-            costoTransporte = ALEMANIA * pesoFinalT;
+            costoTransporte = ALEMANIA * valorPagar;
             break;
             case 3:
-            costoTransporte = ITALIA * pesoFinalT;
+            costoTransporte = ITALIA * valorPagar;
             break;
             case 4:
-            costoTransporte = MEXICO * pesoFinalT;
+            costoTransporte = MEXICO * valorPagar;
             break;
             case 5:
-            costoTransporte = VIETNAM * pesoFinalT;
+            costoTransporte = VIETNAM * valorPagar;
             break;
         }
-    //Muesra rsultados
-        printf("\nPeso a transportar: %.2f toneladas\n", pesoFinalT);
         printf("Costo de transporte: $%.2f\n", costoTransporte);
     }
