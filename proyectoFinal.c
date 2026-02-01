@@ -158,40 +158,82 @@ ResultadoTransporte validarTransporte(float pesoKg) {
 }
 
 //Funcion 3 (parte mateo).
-float calculoCostoPais(float pesoFinalT){
-    //Distancia(km) desde Ecuador a los paises por ruta de comercio por cada pais de destino.
-        int CHINA = 18749; 
-        int ALEMANIA = 10310; 
-        int ITALIA = 11500; 
-        int MEXICO = 3000;
-        int VIETNAM = 21000; 
-        int pais;
-        float costoTransporte;
-        float valorPagar;
-        valorPagar  = pesoFinalT * 1;
-        printf("Seleccione el pais de destino deseado de comercio, de acuerdo a su distancia desde Ecuador:\n(El costo de llevar 1T por 1Km es 1 dolar)\n");
-        printf(" 1.China(18,749Km)\n 2.Almemania(10,310Km)\n 3.Italia(11,500Km)\n 4.Mexico(3,000Km)\n 5.Vietnam(21,000Km)\n");
-        scanf("%i", &pais);
-        while(pais < 1 || pais > 5){
-            printf("Seleccione una opcion valida de pais deseado:\n");
-            scanf("%i", &pais);
-        }
-        switch(pais){
-            case 1:
-            costoTransporte = CHINA * valorPagar;
-            break;
-            case 2:
-            costoTransporte = ALEMANIA * valorPagar;
-            break;
-            case 3:
-            costoTransporte = ITALIA * valorPagar;
-            break;
-            case 4:
-            costoTransporte = MEXICO * valorPagar;
-            break;
-            case 5:
-            costoTransporte = VIETNAM * valorPagar;
-            break;
-        }
-        printf("Costo de transporte: $%.2f\n", costoTransporte);
+float calculoCostoPais(float pesoFinalT, int *pais){
+
+    int CHINA = 18749; 
+    int ALEMANIA = 10310; 
+    int ITALIA = 11500; 
+    int MEXICO = 3000;
+    int VIETNAM = 21000; 
+
+    float costoTransporte;
+    float valorPagar = pesoFinalT * 1;
+
+    printf("Seleccione el pais de destino:\n");
+    printf("1. China\n2. Alemania\n3. Italia\n4. Mexico\n5. Vietnam\n");
+
+    scanf("%i", pais);
+
+    while(*pais < 1 || *pais > 5){
+        printf("Seleccione una opcion valida:\n");
+        scanf("%i", pais);
     }
+
+    switch(*pais){
+
+        case 1:
+         costoTransporte = CHINA * valorPagar;
+         break;
+        case 2: 
+        costoTransporte = ALEMANIA * valorPagar;
+         break;
+
+        case 3: 
+        costoTransporte = ITALIA * valorPagar; 
+        break;
+
+        case 4: 
+        costoTransporte = MEXICO * valorPagar;
+         break;
+
+        case 5:
+        costoTransporte = VIETNAM * valorPagar; 
+        break;
+    }
+        printf("Costo de transporte: $%.2f\n", costoTransporte);
+
+    return costoTransporte;
+}
+//Funcion 4 (Irvin)
+float calculoImpuestos(float costoTransporte, int pais) {
+
+    float impuesto = 0;
+
+    const float impuestos[] = {
+        0.15, // China
+        0.05, // Alemania
+        0.05, // Italia
+        0.20, // Mexico
+        0.15  // Vietnam
+    };
+
+    impuesto = costoTransporte * impuestos[pais - 1];
+
+    printf("\n=== CALCULO DE IMPUESTOS ===\n");
+    printf("Porcentaje de impuesto: %.0f%%\n", impuestos[pais - 1] * 100);
+    printf("Valor del impuesto: $%.2f\n", impuesto);
+
+    return impuesto;
+}
+//Funcion 5(Irvin)
+void cotizacionFinal(float costoTransporte, float impuesto) {
+
+    float total;
+
+    total = costoTransporte + impuesto;
+
+    printf("\n=== COTIZACION FINAL ===\n");
+    printf("Costo de transporte: $%.2f\n", costoTransporte);
+    printf("Impuesto: $%.2f\n", impuesto);
+    printf("TOTAL A PAGAR: $%.2f\n", total);
+}
