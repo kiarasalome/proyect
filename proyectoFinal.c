@@ -200,7 +200,7 @@ float calculoCostoPais(float pesoFinalT, int *pais){
         costoTransporte = VIETNAM * valorPagar; 
         break;
     }
-        printf("Costo de transporte: $%.2f\n", costoTransporte);
+        printf("Costo de transporte: $%f\n", costoTransporte);
 
     return costoTransporte;
 }
@@ -220,8 +220,8 @@ float calculoImpuestos(float costoTransporte, int pais) {
     impuesto = costoTransporte * impuestos[pais - 1];
 
     printf("\n=== CALCULO DE IMPUESTOS ===\n");
-    printf("Porcentaje de impuesto: %.0f%%\n", impuestos[pais - 1] * 100);
-    printf("Valor del impuesto: $%.2f\n", impuesto);
+    printf("Porcentaje de impuesto: %f%%\n", impuestos[pais - 1] * 100);
+    printf("Valor del impuesto: $%f\n", impuesto);
 
     return impuesto;
 }
@@ -232,8 +232,8 @@ void cotizacionFinal(float costoTransporte, float impuesto) {
 
     total = costoTransporte + impuesto;
 
-    printf("\n=== COTIZACION FINAL ===\n");
-    printf("Costo de transporte: $%.2f\n", costoTransporte);
-    printf("Impuesto: $%.2f\n", impuesto);
-    printf("TOTAL A PAGAR: $%.2f\n", total);
+    printf("=== COTIZACION FINAL ===\n");
+    printf("Costo de transporte: $%f\n", costoTransporte);
+    printf("Impuesto: $%f\n", impuesto);
+    printf("TOTAL A PAGAR: $%f\n", total);
 }
