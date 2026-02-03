@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <windows.h>
 
 //FUNCION 1 (PARTE DE DOME)
 float calculoPeso(){
