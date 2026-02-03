@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
 
 //FUNCION 1 (PARTE DE DOME)
 float calculoPeso(){
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
     int numeroProductos, tipoProducto, cantidadTipo;
     float pesoUnitario, pesoTotalProducto;
     float acumulador = 0;
@@ -88,7 +91,8 @@ typedef struct {
 } ResultadoTransporte;
 
 ResultadoTransporte validarTransporte(float pesoKg) {
-
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
     ResultadoTransporte r;
     r.transportes = 0;
     r.toneladas = 0;
@@ -159,7 +163,8 @@ ResultadoTransporte validarTransporte(float pesoKg) {
 
 //Funcion 3 (parte mateo).
 float calculoCostoPais(float pesoFinalT, int *pais){
-
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
     int CHINA = 18749; 
     int ALEMANIA = 10310; 
     int ITALIA = 11500; 
@@ -206,7 +211,8 @@ float calculoCostoPais(float pesoFinalT, int *pais){
 }
 //Funcion 4 (Irvin)
 float calculoImpuestos(float costoTransporte, int pais) {
-
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
     float impuesto = 0;
 
     const float impuestos[] = {
@@ -227,7 +233,8 @@ float calculoImpuestos(float costoTransporte, int pais) {
 }
 //Funcion 5(Irvin)
 void cotizacionFinal(float costoTransporte, float impuesto) {
-
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
     float total;
 
     total = costoTransporte + impuesto;
