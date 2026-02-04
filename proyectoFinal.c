@@ -37,7 +37,7 @@ float calculoPeso(){
     printf("PEQUEÑOS: Buques de Cabotaje (2). Capacidad: 2 t\n");
 
     do{
-        printf("Ingresa el número de productos a transportar: ");
+        printf("\nIngresa el número de productos a transportar: ");
         scanf("%d", &numeroProductos);
         if(numeroProductos <= 0 || numeroProductos >= 100){
             printf("Error: Cantidad no válida. Ingrese un valor entre 1 y 99.\n");
@@ -145,7 +145,7 @@ ResultadoTransporte validarTransporte(float pesoKg) {
     printf("\n=== MEJOR COMBINACIÓN DE TRANSPORTE ===\n");
     printf("Transportes grandes usados: %d\n", mejorG);
     printf("Transportes pequeños usados: %d\n", mejorP);
-    printf("Total de transportes: %d\n", minTransportes);
+    printf("\nTotal de transportes: %d\n", minTransportes);
     printf("Capacidad total disponible: %.2f t\n", mejorCapacidad);
     printf("Peso final considerado: %.2f t\n", pesoFinalT);
 
@@ -167,8 +167,8 @@ float calculoCostoPais(float pesoFinalT, int *pais){
     float costoTransporte;
     float valorPagar = pesoFinalT * 1;
 
-    printf("Seleccione el pais de destino:\n");
-    printf("1. China\n2. Alemania\n3. Italia\n4. Mexico\n5. Vietnam\n");
+    printf("\n1. China\n2. Alemania\n3. Italia\n4. Mexico\n5. Vietnam\n");
+    printf("\nSeleccione el pais de destino: ");
 
     scanf("%i", pais);
 
@@ -229,7 +229,7 @@ void cotizacionFinal(float costoTransporte, float impuesto) {
 
     total = costoTransporte + impuesto;
 
-    printf("=== COTIZACION FINAL ===\n");
+    printf("\n=== COTIZACION FINAL ===\n");
     printf("Costo de transporte: $%.2f\n", costoTransporte);
     printf("Impuesto: $%.2f\n", impuesto);
     printf("TOTAL A PAGAR: $%.2f\n", total);
