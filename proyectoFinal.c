@@ -98,7 +98,7 @@ ResultadoTransporte validarTransporte(float pesoKg) {
     const float capG = 10.0;  
     const float capP = 2.0;   
 
-    const int maxG = 10;
+    const int maxG = 3;
     const int maxP = 2;
 
     int mejorG = -1, mejorP = -1;

@@ -9,5 +9,8 @@ typedef struct {
 } ResultadoTransporte;
 
 ResultadoTransporte validarTransporte(float pesoKg);
+float calculoCostoPais(float pesoFinalT, int *pais);
+float calculoImpuestos(float costoTransporte, int pais);
+void cotizacionFinal(float costoTransporte, float impuesto);
 
 #endif
