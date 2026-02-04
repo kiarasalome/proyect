@@ -15,12 +15,12 @@ float calculoPeso(){
         "2.  Sillas de Oficina\n",
         "3.  Sillas de Sala de Espera\n", 
         "4.  Archivadores y Cajoneras\n", 
-        "5.  Armarios y Estanterias\n", 
+        "5.  Armarios y Estanterías\n", 
         "6.  Mobiliario para Salas de Reuniones\n", 
         "7.  Mobiliario para Coworking\n", 
-        "8.  Muebles para Areas Comunes\n", 
+        "8.  Muebles para Áreas Comunes\n", 
         "9.  Recepciones\n", 
-        "10. Mobiliario para Cafeterias/Comedores\n", 
+        "10. Mobiliario para Cafeterías/Comedores\n", 
         "11. Sillas de comedor\n", 
         "12. Mesas de comedor\n", 
         "13. Bancos y Banquetas\n", 
@@ -31,26 +31,26 @@ float calculoPeso(){
     for(int i = 0; i < 15; i++) {
         printf("%s\n", catalogo[i]);
     }
-    
+     
     printf("\nCAPACIDAD DE CARGA DE LOS TRANSPORTES\n");
     printf("GRANDES: Buques Portacontenedores (3). Capacidad: 10 t\n");
     printf("PEQUEÑOS: Buques de Cabotaje (2). Capacidad: 2 t\n");
 
     do{
-        printf("Ingresa el numero de productos a transportar:\n");
+        printf("Ingresa el número de productos a transportar:\n");
         scanf("%d", &numeroProductos);
         if(numeroProductos <= 0 || numeroProductos >= 100){
-            printf("Error: Cantidad no valida. Ingrese un valor entre 1 y 99.\n");
+            printf("Error: Cantidad no válida. Ingrese un valor entre 1 y 99.\n");
         }
     }while(numeroProductos <= 0 || numeroProductos >= 100);
 
     for(int i = 1; i <= numeroProductos; i++){
         
         do{
-            printf("Ingresa el numero correspondiente al producto seleccionado (1-15):\n");
+            printf("Ingresa el número correspondiente al producto seleccionado (1-15):\n");
             scanf("%d", &tipoProducto);
             if(tipoProducto < 1 || tipoProducto > 15){
-                printf("Error. Opción no valida. Intente con un numero del 1 al 15\n");
+                printf("Error. Opción no válida. Intente con un número del 1 al 15\n");
             }
         } while(tipoProducto < 1 || tipoProducto > 15);
 
@@ -60,7 +60,7 @@ float calculoPeso(){
         printf("Peso unitario: %.2f kg\n", pesoUnitario);
 
         do {
-            printf("¿Cuantos productos de este tipo lleva:\n ");
+            printf("¿Cuántos productos de este tipo lleva?:\n ");
             scanf("%d", &cantidadTipo);
             if(cantidadTipo <= 0){
                 printf("La cantidad debe ser mayor a 0.\n");
@@ -74,7 +74,7 @@ float calculoPeso(){
     }
 
     printf("El peso total de la carga es: %.2f kg\n", acumulador);
-    
+     
     return acumulador;
 }
 
