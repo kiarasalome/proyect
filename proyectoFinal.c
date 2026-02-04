@@ -37,7 +37,7 @@ float calculoPeso(){
     printf("PEQUEÑOS: Buques de Cabotaje (2). Capacidad: 2 t\n");
 
     do{
-        printf("Ingresa el número de productos a transportar:\n");
+        printf("Ingresa el número de productos a transportar: ");
         scanf("%d", &numeroProductos);
         if(numeroProductos <= 0 || numeroProductos >= 100){
             printf("Error: Cantidad no válida. Ingrese un valor entre 1 y 99.\n");
@@ -47,10 +47,10 @@ float calculoPeso(){
     for(int i = 1; i <= numeroProductos; i++){
         
         do{
-            printf("Ingresa el número correspondiente al producto seleccionado (1-15):\n");
+            printf("Ingresa el número correspondiente al producto seleccionado (1-15): ");
             scanf("%d", &tipoProducto);
             if(tipoProducto < 1 || tipoProducto > 15){
-                printf("Error. Opción no válida. Intente con un número del 1 al 15\n");
+                printf("Error. Opción no válida. Intente con un número del 1 al 15: ");
             }
         } while(tipoProducto < 1 || tipoProducto > 15);
 
@@ -60,7 +60,7 @@ float calculoPeso(){
         printf("Peso unitario: %.2f kg\n", pesoUnitario);
 
         do {
-            printf("¿Cuántos productos de este tipo lleva?:\n ");
+            printf("\n¿Cuántos productos de este tipo lleva?: ");
             scanf("%d", &cantidadTipo);
             if(cantidadTipo <= 0){
                 printf("La cantidad debe ser mayor a 0.\n");
@@ -73,7 +73,7 @@ float calculoPeso(){
         printf("Peso total de este producto: %.2f kg\n", pesoTotalProducto);
     }
 
-    printf("El peso total de la carga es: %.2f kg\n", acumulador);
+    printf("\nEl peso total de la carga es: %.2f kg\n", acumulador);
      
     return acumulador;
 }
@@ -135,7 +135,7 @@ ResultadoTransporte validarTransporte(float pesoKg) {
 
     if (decimal > 0.5) {
         pesoFinalT = (int)pesoT + 1;
-        printf("\nEl decimal %.2f t es mayor a 0.5, se redondea hacia arriba.\n", decimal);
+        printf("\nEl decimal %.2f t es mayor a 0.5, se redondea hacia arriba y se aprueba\n", decimal);
     } else {
         pesoFinalT = (int)pesoT;
         printf("\nEl decimal %.2f t es menor o igual a 0.5, se rechaza.\n", decimal);
@@ -173,7 +173,7 @@ float calculoCostoPais(float pesoFinalT, int *pais){
     scanf("%i", pais);
 
     while(*pais < 1 || *pais > 5){
-        printf("Seleccione una opcion valida:\n");
+        printf("\nSeleccione una opción válida:\n");
         scanf("%i", pais);
     }
 
@@ -198,7 +198,7 @@ float calculoCostoPais(float pesoFinalT, int *pais){
         costoTransporte = VIETNAM * valorPagar; 
         break;
     }
-        printf("Costo de transporte: $%.2f\n", costoTransporte);
+        printf("\nCosto de transporte: $%.2f\n", costoTransporte);
 
     return costoTransporte;
 }
@@ -216,7 +216,7 @@ float calculoImpuestos(float costoTransporte, int pais) {
 
     impuesto = costoTransporte * impuestos[pais - 1];
 
-    printf("\n=== CALCULO DE IMPUESTOS ===\n");
+    printf("\n=== CÁLCULO DE IMPUESTOS ===\n");
     printf("Porcentaje de impuesto: %.2f%%\n", impuestos[pais - 1] * 100);
     printf("Valor del impuesto: $%.2f\n", impuesto);
 
